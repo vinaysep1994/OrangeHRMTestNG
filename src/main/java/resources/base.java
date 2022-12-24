@@ -3,7 +3,7 @@ package resources;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.time.Duration;
+//import java.time.Duration;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -20,7 +20,7 @@ public class base {
 	{
 		
 	prop= new Properties();
-	FileInputStream fis=new FileInputStream("C:\\Users\\Admin\\Java-Selenium\\OrangeHRM\\src\\main\\java\\resources\\data.properties");
+	FileInputStream fis=new FileInputStream("E:\\Testing Framework\\OrangeHRMTestNG\\src\\main\\java\\resources\\data.properties");
 	prop.load(fis);
 	
 	String browserName=prop.getProperty("browser");
@@ -29,7 +29,7 @@ public class base {
 
 	if(browserName.equals("chrome"))
 	{
-		System.setProperty("webdriver.chrome.driver","D:\\Drivers\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","E:\\chromedriver.exe");
 		driver= new ChromeDriver();
 	}
 	else if (browserName.equals("firefox"))
@@ -41,7 +41,7 @@ public class base {
 //		IE code
 	}
 	driver.manage().window().maximize();
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+	//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	//driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 	return driver;
 	}

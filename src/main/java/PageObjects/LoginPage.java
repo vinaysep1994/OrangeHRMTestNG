@@ -1,6 +1,6 @@
 package PageObjects;
 
-import java.time.Duration;
+//import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -19,9 +19,9 @@ public class LoginPage extends base{
         this.driver = driver;
     }
 
-    private static final By txtUsername = By.xpath("//body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/div[1]/div[1]/div[2]/input[1]");
-    private static final By txtPassword = By.xpath("//body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/div[2]/div[1]/div[2]/input[1]");
-    private static final By btnLogin = By.xpath("//body/div[@id='app']/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/div[3]/button[1]");
+    private static final By txtUsername = By.xpath("//input[@name='username']");
+    private static final By txtPassword = By.xpath("//input[@name='password']");
+    private static final By btnLogin = By.xpath("//button[@type='submit']");
     private static final By invalidMessage = By.xpath("//body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]");
     private static final By requiredalert = By.xpath("//form[@class='oxd-form']/div/div/span");
     
