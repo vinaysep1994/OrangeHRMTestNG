@@ -48,6 +48,7 @@ public class LoginTest extends base{
 	public void invalidUsernameWithValidPassword() {
 		driver.get(prop.getProperty("url"));
 		LoginPage lp = new LoginPage(driver);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         lp.enterInvalidCredentials("dmin", "admin123");
         Assert.assertEquals(lp.errorMessage(), "Invalid credentials");
 	}
@@ -55,6 +56,7 @@ public class LoginTest extends base{
 	public void invalidUsernameWithInValidPassword() {
 		driver.get(prop.getProperty("url"));
 		LoginPage lp = new LoginPage(driver);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         lp.enterInvalidCredentials("dmin", "admin12345");
         Assert.assertEquals(lp.errorMessage(), "Invalid credentials");
 	}
@@ -63,6 +65,7 @@ public class LoginTest extends base{
 	public void validUsernameWithInValidPassword() {
 		driver.get(prop.getProperty("url"));
 		LoginPage lp = new LoginPage(driver);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         lp.enterInvalidCredentials("Admin", "1admin123");
         Assert.assertEquals(lp.errorMessage(), "Invalid credentials");
 	}
@@ -71,6 +74,7 @@ public class LoginTest extends base{
     public void emptyUsername() {
 		driver.get(prop.getProperty("url"));
 		LoginPage lp = new LoginPage(driver);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         lp.enterInvalidCredentials("","admin123");
         Assert.assertEquals(lp.requiredAlert(),"Required");
     }
@@ -78,13 +82,14 @@ public class LoginTest extends base{
     public void emptyPassword() {
 		driver.get(prop.getProperty("url"));
 		LoginPage lp = new LoginPage(driver);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         lp.enterInvalidCredentials("Admin","");
         Assert.assertEquals(lp.requiredAlert(),"Required");
     }
     @AfterTest
 	public void teardown()
 	{
-		//driver.close();
+		driver.close();
 	}
 }
 

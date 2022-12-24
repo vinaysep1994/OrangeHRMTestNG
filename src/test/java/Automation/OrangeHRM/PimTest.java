@@ -3,6 +3,7 @@ package Automation.OrangeHRM;
 import static org.testng.Assert.assertEquals;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -49,7 +50,9 @@ public void SearchEmployeeByNameAndId() {
 @Test(priority=3)
 public void SrchEmployeeByNameIdStatus() {
 	PimPage pimpage = new PimPage(driver);
+	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	pimpage.SearchByName().sendKeys("ram");
+	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	pimpage.SearchByEmpId().sendKeys("Oran001");
 	//pimpage.SearchByempStatus().click();
 

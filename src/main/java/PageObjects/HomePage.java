@@ -12,8 +12,8 @@ public class HomePage {
         this.driver =driver;
     }
 
-    By txtDashboard = By.xpath("//body[1]/div[1]/div[1]/div[1]/header[1]/div[1]/div[1]/span[1]/h6[1]");
-    By pim = By.xpath("//body/div[@id='app']/div[1]/div[1]/aside[1]/nav[1]/div[2]/ul[1]/li[2]/a[1]/span[1]");
+    By txtDashboard = By.xpath("//span[@class='oxd-topbar-header-breadcrumb']");
+    By pim = By.xpath("//a[contains(@href,'/pim/viewPimModule')]");
 
     public String getDashboard(){
         return driver.findElement(txtDashboard).getText();

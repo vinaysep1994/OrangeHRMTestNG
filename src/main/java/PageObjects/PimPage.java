@@ -12,11 +12,11 @@ public class PimPage {
         this.driver =driver;
     }
     
-    By SearchByempName = By.xpath("//body/div[@id='app']/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/input[1]");
-    By SearchByempId =By.xpath("//body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/div[2]/div[1]/div[2]/input[1]");
-    By searchByemploymentStatus = By.xpath("//body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[1]");
-    By clicksearbtn = By.xpath("//body/div[@id='app']/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/form[1]/div[2]/button[2]");
-    By norecordfoundmsg =By.xpath("//body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/span[1]");
+    By SearchByempName = By.xpath("//label[contains(text(),'Employee Name')]/parent::div/following-sibling::div");
+    By SearchByempId =By.xpath("//label[contains(text(),'Supervisor Name')]/parent::div/following-sibling::div");
+    By searchByemploymentStatus = By.xpath("//label[contains(text(),'Employment Status')]/parent::div/following-sibling::div");
+    By clicksearbtn = By.xpath("//button[@type='submit']");
+    By norecordfoundmsg =By.xpath("//span[contains(text(),'Records Found')]");
 
 public WebElement SearchByName() {
 	return driver.findElement(SearchByempName);
