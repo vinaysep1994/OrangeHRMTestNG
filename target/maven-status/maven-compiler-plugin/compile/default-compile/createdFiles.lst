@@ -1,0 +1,5 @@
+resources\base.class
+PageObjects\HomePage.class
+PageObjects\PimPage.class
+PageObjects\LoginPage.class
+Automation\OrangeHRM\App.class
