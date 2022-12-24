@@ -18,6 +18,7 @@ import java.io.IOException;
 import java.util.List;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import PageObjects.LoginPage;
 import PageObjects.HomePage;
@@ -39,6 +40,7 @@ public class LoginTest extends base{
 		HomePage homepage =new HomePage(driver);
 		LoginPage lp = new LoginPage(driver);
 		System.out.println("Browser is loading");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		homepage= lp.entervalidCredentials("Admin", "admin123");
         Assert.assertTrue(homepage.getDashboard().contains("Dashboard"));
 	}
