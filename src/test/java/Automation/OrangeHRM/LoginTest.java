@@ -38,6 +38,7 @@ public class LoginTest extends base{
 		driver.get(prop.getProperty("url"));
 		HomePage homepage =new HomePage(driver);
 		LoginPage lp = new LoginPage(driver);
+		System.out.println("Browser is loading");
 		homepage= lp.entervalidCredentials("Admin", "admin123");
         Assert.assertTrue(homepage.getDashboard().contains("Dashboard"));
 	}
@@ -81,7 +82,7 @@ public class LoginTest extends base{
     @AfterTest
 	public void teardown()
 	{
-		driver.close();
+		//driver.close();
 	}
 }
 
